@@ -1,56 +1,85 @@
 import java.util.*;
 import java.text.DecimalFormat;
-// currency converter in java swing
+
 class Converter
 {
-    public static void main(String[] args)
-    {
-        double ron,dollar,pound,code,euro,yen;
+    public static void main(String[] args) {
+
+
+
+        double ron = 0,dollar = 0,pound=0,code,euro=0;
         DecimalFormat f = new DecimalFormat("##.###");
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the currency code 1:ron\n2:Dollar\n3:Euro\n");
         code=sc.nextInt();
-        //For Ron Conversion
+
         if(code == 1)
         {
             System.out.println("Enter amount in ron");
+
             ron = sc.nextFloat();
-            dollar = ron *4.33;
+            System.out.println("Enter exchange rate for dollar");
+            double exchange_for_dollars = sc.nextFloat();
+            dollar = ron * exchange_for_dollars;
             System.out.println("Dollar : "+f.format(dollar));
-            pound = ron * 5.86;
+
+            System.out.println("Enter exchange rate for pound");
+            double exchange_for_pound  = sc.nextFloat();
+            pound = ron * exchange_for_pound;
             System.out.println("Pound : "+f.format(pound));
-            euro = ron *4.94;
-            System.out.println("Euro : "+f.format(euro));
+
+
+            System.out.println("Enter exchange rate for euro");
+            double exchange_for_euro  = sc.nextFloat();
+            euro = ron * exchange_for_euro;
+            System.out.println("Pound : "+f.format(euro));
+
 
         }
-        //For Dollar Conversion
+
         else if (code == 2)
         {
             System.out.println("Enter amount in dollar");
             dollar = sc.nextFloat();
-            ron = dollar * 0.23;
+            System.out.println("Enter exchange rate for rons");
+            double exchange_for_rons = sc.nextFloat();
+            ron = dollar * exchange_for_rons;
             System.out.println("Ron : "+f.format(ron));
-            pound = dollar * 0.74;
+
+            System.out.println("Enter exchange rate for pound");
+            double exchange_for_pound  = sc.nextFloat();
+            pound = dollar * exchange_for_pound;
             System.out.println("Pound : "+f.format(pound));
-            euro = dollar * 0.88;
-            System.out.println("Euro : "+f.format(euro));
+
+            System.out.println("Enter exchange rate for euro");
+            double exchange_for_euro  = sc.nextFloat();
+            euro = dollar * exchange_for_euro;
+            System.out.println("Pound : "+f.format(euro));
 
         }
 
-        //For Euro Conversion
         else if(code == 3)
         {
-            System.out.println("Enter amount in Euro");
+            System.out.println("Enter amount in euro");
             euro = sc.nextFloat();
-            ron = euro * 4.95;
+            System.out.println("Enter exchange rate for rons");
+            double exchange_for_rons = sc.nextFloat();
+            ron = euro * exchange_for_rons;
             System.out.println("Ron : "+f.format(ron));
-            dollar = euro * 1.14;
+
+            System.out.println("Enter exchange rate for dollars");
+            double exchange_for_dollar   = sc.nextFloat();
+            dollar  = euro  * exchange_for_dollar;
             System.out.println("Dollar : "+f.format(dollar));
-            pound = euro * 0.84;
-            System.out.println("Pound : "+f.format(pound));
+
+            System.out.println("Enter exchange rate for pounds");
+            double exchange_for_pounds   = sc.nextFloat();
+            pound = euro * exchange_for_pounds;
+            System.out.println("Pounds : "+f.format(pound));
 
         }
         else
             System.out.println("Invalid Code");
     }
+}
 }
